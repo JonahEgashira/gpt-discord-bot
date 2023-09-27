@@ -6,7 +6,7 @@ from src.base import Message
 from src.constants import (
     BOT_INVITE_URL,
     DISCORD_BOT_TOKEN,
-    ACTIVATE_THREAD_PREFX,
+    ACTIVATE_THREAD_PREFIX,
     MAX_THREAD_MESSAGES,
     SECONDS_DELAY_RECEIVING_MSG,
     SYSTEM_MESSAGE,
@@ -75,7 +75,7 @@ async def chat_command(int: discord.Interaction, message: str):
 
         # create the thread
         thread = await response.create_thread(
-            name=f"{ACTIVATE_THREAD_PREFX} {user.name[:20]} {message[:30]}",
+            name=f"{ACTIVATE_THREAD_PREFIX} {user.name[:20]} {message[:30]}",
             slowmode_delay=1,
             reason="gpt-bot",
             auto_archive_duration=60,
@@ -132,7 +132,7 @@ async def on_message(message: DiscordMessage):
         if (
             thread.archived
             or thread.locked
-            or not thread.name.startswith(ACTIVATE_THREAD_PREFX)
+            or not thread.name.startswith(ACTIVATE_THREAD_PREFIX)
         ):
             # ignore this thread
             return

@@ -36,7 +36,7 @@ SECONDS_DELAY_RECEIVING_MSG = (
     3  # give a delay for the bot to respond so it can catch multiple messages
 )
 MAX_THREAD_MESSAGES = 200
-ACTIVATE_THREAD_PREFX = "💬✅"
+ACTIVATE_THREAD_PREFIX = "💬✅"
 INACTIVATE_THREAD_PREFIX = "💬❌"
 MAX_CHARS_PER_REPLY_MSG = (
     2000  # discord has a 2k limit

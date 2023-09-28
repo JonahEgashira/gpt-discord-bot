@@ -33,9 +33,9 @@ BOT_INVITE_URL = f"https://discord.com\
 &scope=bot"
 
 SECONDS_DELAY_RECEIVING_MSG = (
-    3  # give a delay for the bot to respond so it can catch multiple messages
+    1  # give a delay for the bot to respond so it can catch multiple messages
 )
-MAX_THREAD_MESSAGES = 200
+MAX_THREAD_MESSAGES = 400
 ACTIVATE_THREAD_PREFIX = "💬✅"
 INACTIVATE_THREAD_PREFIX = "💬❌"
 MAX_CHARS_PER_REPLY_MSG = (

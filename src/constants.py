@@ -8,7 +8,7 @@ def load_system_message(file_path):
     with open(file_path, "r", encoding='utf-8') as f:
         return f.read().strip()
 
-system_message_path = "./system_message.txt"
+system_message_path = "/Users/jonah/GitHub/gpt-discord-bot/src/system_message.txt"
 
 DISCORD_BOT_TOKEN = os.environ["DISCORD_BOT_TOKEN"]
 DISCORD_CLIENT_ID = os.environ["DISCORD_CLIENT_ID"]

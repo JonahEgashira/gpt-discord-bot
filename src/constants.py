@@ -4,6 +4,12 @@ from typing import List
 
 load_dotenv()
 
+def load_system_message(file_path):
+    with open(file_path, "r", encoding='utf-8') as f:
+        return f.read().strip()
+
+system_message_path = "./system_message.txt"
+
 DISCORD_BOT_TOKEN = os.environ["DISCORD_BOT_TOKEN"]
 DISCORD_CLIENT_ID = os.environ["DISCORD_CLIENT_ID"]
 
@@ -11,7 +17,7 @@ OPENAI_API_KEY = os.environ["OPENAI_API_KEY"]
 OPENAI_API_URL = os.environ['OPENAI_API_URL']
 OPENAI_MODEL = os.environ['OPENAI_MODEL']
 
-SYSTEM_MESSAGE = os.environ["SYSTEM_MESSAGE"]
+SYSTEM_MESSAGE = load_system_message(system_message_path)
 KNOWLEDGE_CUTOFF = os.environ["KNOWLEDGE_CUTOFF"]
 
 ALLOWED_SERVER_IDS: List[int] = []
@@ -33,9 +39,9 @@ BOT_INVITE_URL = f"https://discord.com\
 &scope=bot"
 
 SECONDS_DELAY_RECEIVING_MSG = (
-    1  # give a delay for the bot to respond so it can catch multiple messages
+    0  # give a delay for the bot to respond so it can catch multiple messages
 )
-MAX_THREAD_MESSAGES = 400
+MAX_THREAD_MESSAGES = 800
 ACTIVATE_THREAD_PREFIX = "💬✅"
 INACTIVATE_THREAD_PREFIX = "💬❌"
 MAX_CHARS_PER_REPLY_MSG = (
